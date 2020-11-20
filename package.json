@@ -1,0 +1,27 @@
+{
+  "name": "pindwin",
+  "version": "1.0.0",
+  "description": "A program to pin many windows",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luanpablo100/pindwin.git"
+  },
+  "keywords": [
+    "Pin",
+    "Window",
+    "Fix"
+  ],
+  "author": "Luan Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luanpablo100/pindwin/issues"
+  },
+  "homepage": "https://github.com/Luanpablo100/pindwin#readme",
+  "dependencies": {
+    "electron": "^10.1.5"
+  }
+}
