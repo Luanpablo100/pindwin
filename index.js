@@ -1,19 +1,13 @@
 const electron = require('electron')
-//const db = require("./db")
-
 const {app, BrowserWindow, ipcMain} = electron
-let mainWindow
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({
-        icon: "img/browser.ico",
-        darkTheme: true,
-        autoHideMenuBar: true,
+    const mainWindow = new BrowserWindow ({
         webPreferences: {
-            nodeIntegration: true //Hablitar integração do Node com o Electron
+            nodeIntegration: true
         }
     })
-    mainWindow.loadURL(`file://${__dirname}/index.html`)
+    mainWindow.loadFile('assets/pages/index.html')
 })
 
 ipcMain.on('sendLink', (event, link) => {
@@ -22,16 +16,15 @@ ipcMain.on('sendLink', (event, link) => {
     sideWindow = new BrowserWindow({
         width: wid, 
         height: hei,
-        icon: "img/browser.ico",
-        darkTheme: true,
         autoHideMenuBar: true,
         alwaysOnTop: true,
         webPreferences: {
             nodeIntegration: true //Hablitar integração do Node com o Electron
         }});
-    sideWindow.loadURL(`${link}`,
-    {userAgent: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'});
-    console.log(link)
+    sideWindow.loadURL(`${link}`)
+    sideWindow.on('closed', () => {
+        win = null
+    });
 })
 
 function widX (link) {

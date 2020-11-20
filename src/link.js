@@ -1,5 +1,5 @@
 const electron = require('electron')
-const {BrowserWindow, ipcRenderer} = electron
+const {ipcRenderer} = electron
 
 var l = document.getElementsByClassName("link");
 var i;
@@ -28,4 +28,3 @@ document.getElementById('search').addEventListener('submit', (event) => {
     console.log(searchtext)
     ipcRenderer.send('sendLink', searchtext)
 })
-
