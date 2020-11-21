@@ -3,6 +3,7 @@ const {app, BrowserWindow, ipcMain} = electron
 
 app.on('ready', () => {
     const mainWindow = new BrowserWindow ({
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true
         }
@@ -21,7 +22,10 @@ ipcMain.on('sendLink', (event, link) => {
         webPreferences: {
             nodeIntegration: true //Hablitar integração do Node com o Electron
         }});
-    sideWindow.loadURL(`${link}`)
+    sideWindow.loadURL(
+            `${link}`,
+            {userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'}
+        );
     sideWindow.on('closed', () => {
         win = null
     });
