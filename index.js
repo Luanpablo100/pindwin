@@ -4,6 +4,7 @@ const {app, BrowserWindow, ipcMain} = electron
 app.on('ready', () => {
     const mainWindow = new BrowserWindow ({
         autoHideMenuBar: true,
+        icon: 'assets/img/pindwin.svg',
         webPreferences: {
             nodeIntegration: true
         }
