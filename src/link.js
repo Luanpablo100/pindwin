@@ -9,7 +9,10 @@ l[i].addEventListener('click', (event) => {
     var link = event.target.href
     if (link == "https://www.twitch.tv/") {
         alert("Após encontrar a live desejada, coloque-a em modo teatro!")
-    }
+    } else if (link == 'file:///C:/Users/lpabl/Documents/Code/pindwin/assets/pages/spotify.html') {
+        alert('Este recurso ainda não está disponível!')
+        alert('A seguir, verá apenas uma representação.')
+    } else {}
     ipcRenderer.send('sendLink', link)
 })}
 

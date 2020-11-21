@@ -30,7 +30,6 @@ ipcMain.on('sendLink', (event, link) => {
     sideWindow.on('closed', () => {
         win = null
     });
-    console.log(link)
 })
 
 function widX (link) {
