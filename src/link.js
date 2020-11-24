@@ -2,6 +2,9 @@ const electron = require('electron')
 const {ipcRenderer} = electron
 const path = require('path')
 
+var caminho = path.resolve(__dirname, 'spotify.html')
+document.getElementById('sptflink').href = caminho
+
 var l = document.getElementsByClassName("link");
 var i;
 for (i = 0; i < l.length; i++) {
