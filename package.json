@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Luanpablo100/pindwin#readme",
   "dependencies": {
     "electron": "^10.1.3"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.1.0"
   }
 }
