@@ -39,7 +39,7 @@ function widX (link) {
         wid = 500
     } else if (link == "https://web.whatsapp.com/") {
         wid = 800
-    } else if (link == 'file:///C:/Users/lpabl/Documents/Code/pindwin/assets/pages/spotify.html'){
+    } else if (link == `file://${__dirname}/assets/pages/spotify.html`){
         wid = 400
     } else {
         var wid = 800
@@ -54,7 +54,7 @@ function heiX (link) {
         hei = 310
     } else if (link == "https://web.whatsapp.com/") {
         hei = 710
-    } else if (link == 'file:///C:/Users/lpabl/Documents/Code/pindwin/assets/pages/spotify.html'){
+    } else if (link == `file://${__dirname}/assets/pages/spotify.html`){
         hei = 115
     } else {
         var hei = 800
