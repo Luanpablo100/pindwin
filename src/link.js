@@ -1,5 +1,6 @@
 const electron = require('electron')
 const {ipcRenderer} = electron
+const path = require('path')
 
 var l = document.getElementsByClassName("link");
 var i;
@@ -9,7 +10,7 @@ l[i].addEventListener('click', (event) => {
     var link = event.target.href
     if (link == "https://www.twitch.tv/") {
         alert("Após encontrar a live desejada, coloque-a em modo teatro!")
-    } else if (link == `file://${__dirname}/spotify.html`) {
+    } else if (link == `file://${path.resolve(__dirname, 'spotify.html')}`) {
         alert('Este recurso ainda não está disponível!')
         alert('A seguir, verá apenas uma representação.')
     } else {}
