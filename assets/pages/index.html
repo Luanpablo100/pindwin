@@ -13,7 +13,7 @@
         <div id="addModal" class="desactive">
             <form action="">
                 <h1 id="exit">Novo link</h1>
-                <span class="addIc">X</span>
+                <span class="exitAdd">X</span>
                 <label for="linkname">Nome</label>
                 <input type="text" class="input-link" id="linkname">
                 <label for="linkurl">Link do site</label>
@@ -40,52 +40,17 @@
                         <input type="checkbox" id="check-minimize-window">
                     </div>
                 </div>
-                <button id="addBtn">Adicionar</button>
+                <button id="addBtn" onsubmit="addFav()">Adicionar</button>
             </form>
         </div>
         <div id="links">
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                        <img src="https://www.flaticon.com/svg/static/icons/svg/2111/2111668.svg" alt="Twitch logo">
-                <!--</a>-->
-                <a class="link" href="https://www.twitch.tv">Twitch</a>
-            </div>
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                    <img src="https://www.flaticon.com/svg/static/icons/svg/220/220236.svg" alt="WhatsApp logo">
-                <!--</a>-->
-                <a class="link" href="https://web.whatsapp.com">WhatsApp</a>
-            </div>
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                    <img src="../img/githublogo.png" alt="GitHub logo">
-                <!--</a>-->
-                <a class="link" href="https://github.com">GitHub</a>
-            </div>
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                    <img src="https://www.flaticon.com/svg/static/icons/svg/1384/1384060.svg" alt="Youtube logo" width="50">
-                <!--</a>-->
-                <a class="link" href="https://youtube.com">Youtube</a>
-            </div>
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                    <img src="https://www.flaticon.com/svg/static/icons/svg/2111/2111624.svg" alt="Spotify logo">
-                <!--</a>-->
-                <a class="link" href="spotify.html" id="sptflink">Spotify</a>
-            </div>            
-            <div class="opt">
-                <!--<a class="link" href="#">-->
-                    <img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg" alt="Add links">
-                <!--</a>-->
-                <a class="addIc" href="#">Adicionar</a>
-            </div>
+    
         </div>
         <form action="" id="search">
             <label for="search-bar">Ou, cole o link aqui</label>
             <input type="text" class="input-link" id="search-bar" name="search-bar">
         </form>
     </main>
-    <script src="../../src/link.js"></script>
+    <script defer src="../../src/render.js"></script>
 </body>
 </html>
