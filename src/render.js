@@ -6,6 +6,7 @@ let divLinks = null
 let favorites = []
 let elementsLink = null
 let exitAdd = null
+let addForm = null
 
 function start() {
     divLinks = document.querySelector('#links')
@@ -13,7 +14,7 @@ function start() {
 }
 
 async function getData() {
-    const data = await fetch('../../src/database/configs.json')
+    let data = await fetch('../../src/database/configs.json')
     favorites = await data.json()
     renderFavorites()
     getLinks()
@@ -33,6 +34,7 @@ function renderFavorites() {
     })
     favoritesHTML += ''
     divLinks.innerHTML = favoritesHTML
+    addFav()
 }
 
 // Link
@@ -79,7 +81,14 @@ function getLinks() {
 }
 
 function addFav() {
-    console.log('adicionou!')
+    addForm = document.querySelector('form')
+    addForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let name = document.querySelector('#linkname').value
+        let name = document.querySelector('#linkurl').value
+        let name = document.querySelector('#linkimage').value
+        ipcRenderer.send('addLink', {name, link, image})
+    })
 }
 
 start()

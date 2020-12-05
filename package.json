@@ -1,27 +1,22 @@
 {
-  "name": "pindwin",
+  "name": "pindwin-ts",
   "version": "1.0.0",
-  "description": "Pin windows",
-  "main": "index.js",
+  "description": "Create and pin windows",
+  "main": "build/index.js",
   "scripts": {
-    "electron": "electron .",
+    "compile": "tsc && mv index.js build/",
+    "start": "npm run compile && electron build/.",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/img/pindwin.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . pindwin --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/img/pindwin.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Pindwin\"",
     "package-linux": "electron-packager . pindwin --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/img/pindwin.ico --prune=true --out=release-builds"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Luanpablo100/pindwin.git"
-  },
   "author": "Luan Oliveira",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Luanpablo100/pindwin/issues"
-  },
-  "homepage": "https://github.com/Luanpablo100/pindwin#readme",
   "dependencies": {
-    "electron": "11.0.0",
-    "lowdb": "^1.0.0"
+    "@types/lowdb": "^1.0.9",
+    "electron": "^11.0.3",
+    "lowdb": "^1.0.0",
+    "typescript": "^4.1.2"
   },
   "devDependencies": {
     "electron-packager": "^15.1.0"

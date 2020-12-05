@@ -1,5 +1,5 @@
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
+import low from 'lowdb'
+import FileSync from 'lowdb/adapters/FileSync'
 const adapter = new FileSync('src/database/configs.json')
 const db = low(adapter)
 
@@ -38,23 +38,4 @@ db.defaults({
         }
     ]}).write()
 
-// Add a post
-// db.get('sites')
-//   .push({ id: 1, title: 'lowdb is awesome'})
-//   .write()
-
-// Set a user using Lodash shorthand syntax
-// db.set('user.name', 'typicode')
-//   .write()
-  
-// Increment count
-// db.update('count', n => n + 1)
-//   .write()
-
-function addFav() {
-
-}
-
-function removeFav() {
-
-}
+    export default db
