@@ -1,10 +1,9 @@
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('src/database/configs.json')
-const db = low(adapter)
-
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('src/database/configs.json');
+var db = low(adapter);
 // Set some defaults (required if your JSON file is empty)
-db.defaults({ 
+db.defaults({
     sites: [
         {
             "name": "Twitch",
@@ -36,4 +35,6 @@ db.defaults({
             "link": "#",
             "image": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg"
         }
-    ]}).write()
+    ]
+}).write();
+//# sourceMappingURL=db.js.map
