@@ -1,7 +1,6 @@
 # Pindwin
 
 > leave the windows on top.
-
 ## Description
 Pindwin is my project for the programming module of the technical course, using the electron framework it is a desktop app to open windows and always leave them overlapping, with the aim of reducing the switching between frequently used windows.
 
@@ -37,7 +36,6 @@ npm i
 ```
   npm run electron
 ```
-
 ## Usage
 For people who use the computer for work or study, and can use it for entertainment or stay focused.
 

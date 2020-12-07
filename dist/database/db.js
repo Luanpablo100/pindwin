@@ -1,10 +1,9 @@
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('src/database/configs.json')
-const db = low(adapter)
-
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('src/database/configs.json');
+var db = low(adapter);
 // Set some defaults (required if your JSON file is empty)
-db.defaults({ 
+db.defaults({
     sites: [
         {
             "name": "Twitch",
@@ -18,12 +17,12 @@ db.defaults({
         },
         {
             "name": "Github",
-            "link": "htpps://github.com",
+            "link": "https://github.com",
             "image": "../img/githublogo.png"
         },
         {
             "name": "Youtube",
-            "link": "htpps://youtube.com",
+            "link": "https://youtube.com",
             "image": "https://www.flaticon.com/svg/static/icons/svg/1384/1384060.svg"
         },
         {
@@ -36,25 +35,6 @@ db.defaults({
             "link": "#",
             "image": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg"
         }
-    ]}).write()
-
-// Add a post
-// db.get('sites')
-//   .push({ id: 1, title: 'lowdb is awesome'})
-//   .write()
-
-// Set a user using Lodash shorthand syntax
-// db.set('user.name', 'typicode')
-//   .write()
-  
-// Increment count
-// db.update('count', n => n + 1)
-//   .write()
-
-function addFav() {
-
-}
-
-function removeFav() {
-
-}
+    ]
+}).write();
+//# sourceMappingURL=db.js.map
