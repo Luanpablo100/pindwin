@@ -1,5 +1,3 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -36,6 +34,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+// This file is required by the index.html file and will
+// be executed in the renderer process for that window.
+var electron = require('electron');
+var ipcRenderer = electron.ipcRenderer;
 var favorites = Object;
 function start() {
     console.log('App is starting');
@@ -43,7 +45,7 @@ function start() {
 }
 function getData() {
     return __awaiter(this, void 0, void 0, function () {
-        var data;
+        var data, divLinks;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch('../../src/database/configs.json')];
@@ -53,15 +55,12 @@ function getData() {
                 case 2:
                     favorites = _a.sent();
                     console.log(favorites);
-                    getLinks();
+                    divLinks = document.getElementById('links');
+                    renderFavorites(divLinks);
                     return [2 /*return*/];
             }
         });
     });
-}
-function getLinks() {
-    var divLinks = document.getElementById('links');
-    renderFavorites(divLinks);
 }
 function renderFavorites(divLinks) {
     var favoritesHTML = '';
@@ -71,6 +70,37 @@ function renderFavorites(divLinks) {
         favoritesHTML += favoriteHTML;
     });
     divLinks.innerHTML = favoritesHTML;
+    getLinks();
+}
+function getLinks() {
+    var elementsLink = document.getElementsByClassName("link");
+    for (var i = 0; i < (elementsLink.length - 1); i++) {
+        elementsLink[i].addEventListener('click', function (event) {
+            event.preventDefault();
+            var link = event.target.href;
+            switch (link) {
+                case 'https://www.twitch.tv/':
+                    alert("Após encontrar a live desejada, coloque-a em modo teatro!");
+                    break;
+                // case `file://${path.resolve(__dirname, 'spotify.html')}`:
+                //     alert('Este recurso ainda não está disponível! A seguir, verá apenas uma representação.')
+                //     break
+                default:
+                    break;
+            }
+            ipcRenderer.send('sendLink', link);
+        });
+    }
+    var exitAdd = document.getElementsByClassName("exitAdd");
+    var c;
+    for (c = 0; c < exitAdd.length; c++) {
+        exitAdd[c].addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('addModal').classList.toggle('desactive');
+            document.getElementById('addModal').classList.toggle('active');
+        });
+    }
+    //
 }
 start();
 //# sourceMappingURL=renderer.js.map

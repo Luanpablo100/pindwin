@@ -18,12 +18,12 @@ db.defaults({
         },
         {
             "name": "Github",
-            "link": "htpps://github.com",
+            "link": "https://github.com",
             "image": "../img/githublogo.png"
         },
         {
             "name": "Youtube",
-            "link": "htpps://youtube.com",
+            "link": "https://youtube.com",
             "image": "https://www.flaticon.com/svg/static/icons/svg/1384/1384060.svg"
         },
         {
