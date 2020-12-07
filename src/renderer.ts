@@ -31,6 +31,7 @@ function renderFavorites(divLinks:HTMLElement) {
     favoritesHTML += favoriteHTML
     })
     divLinks.innerHTML = favoritesHTML
+    let {width, heigth, over} = (<any>favorites).sites
     getLinks()
 }
 

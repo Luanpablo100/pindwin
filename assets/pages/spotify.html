@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="../css/spotify.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <h1>Spotify</h1>
+        <img src="https://www.flaticon.com/svg/static/icons/svg/2919/2919600.svg" alt="user image">
+    </header>
+    <main>
+        <img src="https://www.flaticon.com/svg/static/icons/svg/174/174872.svg" alt="">
+        <p>Esta opção ainda não está disponível</p>
+    </main>
+    <footer>
+        <div id="info">
+            <img src="https://lastfm.freetls.fastly.net/i/u/ar0/5cb0c0e7bfd405bfbcf8f87c57840c5d.jpg" alt="" id="infoimg">
+            <span>
+                <h3>Yam Yam</h3>
+                <h4>No vacation</h4>
+            </span>
+        </div>
+        <div id="player">
+            <div id="player-opts">
+                <img src="../img/previous.svg" alt="Previous" class="player-control" id="prev">
+                <img src="../img/play.svg" alt="Play" class="player-control">
+                <img src="../img/next.svg" alt="Next" class="player-control" id="next">
+                <img src="../img/speaker.svg" alt="Volume" class="player-control" id="volume-btn">
+            </div>
+            <input type="range" min="0" max="100" class="hidden" id="volume">
+        </div>
+    </footer>
+    <script defer src="../../dist/scripts/spotify.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotify Web Playback SDK Quick Start Tutorial</title>
+</head>
+<body>
+  <h1>Spotify Web Playback SDK Quick Start Tutorial</h1>
+  <h2>Open your console log: <code>View > Developer > JavaScript Console</code></h2>
+
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script>
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = 'BQCAUG1z7l0fs8YBcBD2kNvHAhsnkkbFIcnKb5GI-0CBb58dbnPQVcOYg09oi7E6ngCsr_NSllOY4YW-dIp25Nn--ni5Vy0PcQBXCweoikRBnXhSMJ7NjvAMXasoSAiH4pPgmucLBoKtE56ELY4knhkBP73F8QS8q3kCFw';
+      const player = new Spotify.Player({
+        name: 'Web Playback SDK Quick Start Player',
+        getOAuthToken: cb => { cb(token); }
+      });
+
+      // Error handling
+      player.addListener('initialization_error', ({ message }) => { console.error(message); });
+      player.addListener('authentication_error', ({ message }) => { console.error(message); });
+      player.addListener('account_error', ({ message }) => { console.error(message); });
+      player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+      // Playback status updates
+      player.addListener('player_state_changed', state => { console.log(state); });
+
+      // Ready
+      player.addListener('ready', ({ device_id }) => {
+        console.log('Ready with Device ID', device_id);
+      });
+
+      // Not Ready
+      player.addListener('not_ready', ({ device_id }) => {
+        console.log('Device ID has gone offline', device_id);
+      });
+
+      // Connect to the player!
+      player.connect();
+    };
+  </script>
+</body>
+</html>

@@ -70,6 +70,7 @@ function renderFavorites(divLinks) {
         favoritesHTML += favoriteHTML;
     });
     divLinks.innerHTML = favoritesHTML;
+    var _a = favorites.sites, width = _a.width, heigth = _a.heigth, over = _a.over;
     getLinks();
 }
 function getLinks() {

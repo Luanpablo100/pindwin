@@ -3,32 +3,50 @@
     {
       "name": "Twitch",
       "link": "https://www.twitch.tv",
-      "image": "https://www.flaticon.com/svg/static/icons/svg/2111/2111668.svg"
+      "image": "https://www.flaticon.com/svg/static/icons/svg/2111/2111668.svg",
+      "width": 500,
+      "heigth": 310,
+      "over": true
     },
     {
       "name": "WhatsApp",
       "link": "https://web.whatsapp.com",
-      "image": "https://www.flaticon.com/svg/static/icons/svg/220/220236.svg"
+      "image": "https://www.flaticon.com/svg/static/icons/svg/220/220236.svg",
+      "width": 800,
+      "heigth": 710,
+      "over": true
     },
     {
       "name": "Github",
       "link": "https://github.com",
-      "image": "../img/githublogo.png"
+      "image": "../img/githublogo.png",
+      "width": 800,
+      "heigth": 800,
+      "over": true
     },
     {
       "name": "Youtube",
       "link": "https://youtube.com",
-      "image": "https://www.flaticon.com/svg/static/icons/svg/1384/1384060.svg"
+      "image": "https://www.flaticon.com/svg/static/icons/svg/1384/1384060.svg",
+      "width": 550,
+      "heigth": 380,
+      "over": true
     },
     {
       "name": "Spotify",
       "link": "spotify.html",
-      "image": "https://www.flaticon.com/svg/static/icons/svg/2111/2111624.svg"
+      "image": "https://www.flaticon.com/svg/static/icons/svg/2111/2111624.svg",
+      "width": 400,
+      "heigth": 115,
+      "over": true
     },
     {
       "name": "Adicionar",
       "link": "#",
-      "image": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg"
+      "image": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+      "width": 800,
+      "heigth": 800,
+      "over": true
     }
   ]
 }
